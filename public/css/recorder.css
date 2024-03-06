@@ -1,0 +1,369 @@
+:root {
+    /*--background: #f3f4f6;*/
+    --background: rgb(231, 231, 231);
+    --speaking-dark: #a15f01;
+    --speaking-light: #ce7800;
+    --speaking-accent: #fcae41;
+    --speaking-active: #e6dbd6;
+    --speaking-inactive: #f3f4f6;
+    --primary: red;
+    --secondary: #d8d8d8;
+    --size: 15px;
+}
+
+/*
+   Sobreescritura de estilos CSS de etiquetas HTML5
+   ========================================================================== */
+
+body {
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.2rem;
+    overflow: hidden;
+}
+
+
+/*
+  Sobreescritura de estilos CSS Materialize
+  ========================================================================== */
+
+.row {
+    margin-bottom: 0 !important;
+}
+.recorder-container {
+    background-color: var(--background) !important;
+    box-shadow: none !important;
+    height: 100%;
+    margin: 0 !important;
+    transition: none !important;
+    width: 100%;
+}
+.recorder-container::-webkit-scrollbar {
+    display: none;
+}
+.card-content {
+    padding: 0 !important;
+}
+.card-content .container.white {
+    border-radius: 0.9rem;
+    height: 380px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+}
+.card-content .card-title {
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+.card-action {
+    padding: 0 !important;
+}
+
+
+/*
+  Definición de estilos CSS de la grabadora
+  ========================================================================== */
+
+#app {}
+/*
+#error-div,
+#success-div,
+#recordingList {
+    display: none;
+}
+.roles {
+    position: relative;
+    top: 2%;
+    width: 50%;
+}
+*/
+.rol-container {
+    height: 90px;
+    width: 100%;
+}
+.rol-row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.rol .col {
+    margin-left: 0 !important;
+}
+.rol .card {
+    border-radius: 0.9rem;
+    background-color: var(--speaking-dark-inactive);
+    margin: 15px;
+    width: 140px;
+    height: 60px;
+    padding: 5px 10px;
+    color: var(--background);
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+.rol .col-content {
+    display: flex;
+    align-items: center;
+}
+.rol label {
+    color: var(--speaking-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    -webkit-transition: color 1000ms linear;
+    -ms-transition: color 1000ms linear;
+    transition: color 1000ms linear;
+}
+.rol .card .circle {
+    width: 40%;
+    margin-right: 5px;
+}
+#male {
+    filter: invert(0%) sepia(60%) saturate(100%) hue-rotate(163deg) brightness(97%) contrast(101%) !important;
+}
+#female{
+    filter: invert(0%) sepia(100%) saturate(100%) hue-rotate(163deg) brightness(97%) contrast(101%) !important;
+}
+.card-disabled {
+    pointer-events: none;
+}
+.card-disabled .card {
+    filter: invert(10%) sepia(70%) saturate(60%) hue-rotate(163deg) brightness(97%) contrast(91%) !important;
+}
+.card-active .card {
+    background-color: var(--speaking-dark);
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+.card-active .card label {
+    color: #ffffff;
+    -webkit-transition: color 1000ms linear;
+    -ms-transition: color 1000ms linear;
+    transition: color 1000ms linear;
+}
+.dialogos {
+    height: 380px;
+    overflow-y: auto;
+}
+.dialogos ul {
+    margin: 0 15px 15px 15px;
+    padding: 0;
+}
+.dialogos ul li {
+    color: var(--speaking-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.dialogos .sub-active {
+    color: black;
+}
+.dialogos .current {
+    color: #ffffff;
+    background-color: var(--speaking-dark);
+    opacity: 1;
+}
+.dialogos ul li.rol-active + .message {
+    color: #ffffff;
+    background-color: var(--speaking-dark);
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.dialogos .sub-inactive {
+    background-color: var(--speaking-inactive);
+    color: gray;
+    opacity: .6;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+
+}
+.name {
+    margin-bottom: -2px!important;
+    margin-top: 12px;
+    opacity: .7;
+    font-size: 0.9rem;
+    font-weight: 400;
+    z-index: 3;
+}
+.message {
+    background-color: var(--speaking-active);
+    font-weight: 500 !important;
+    list-style-type: none;
+    margin: 2px 0;
+    padding: 5px 10;
+    border-radius: 0.9rem;
+    display:inline-block;
+    clear: both;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.him {
+    margin-right: 30%;
+}
+.me {
+    margin-left: 70% !important;
+}
+.him + .me + .message {
+    border-bottom-right-radius: 5px;
+}
+.me + .me + .message {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.me:last-of-type {
+    border-bottom-right-radius: 30px;
+}
+.audio {
+    margin: 15px 0;
+}
+.player {
+    margin: 15px 0;
+}
+.player a {
+    background-color: #ffffff;
+    color: var(--speaking-dark);
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 3px;
+}
+.player a:hover {
+    background-color: var(--speaking-dark);
+    color: #ffffff;
+}
+.player a i {
+    color: var(--speaking-dark);
+    font-size: 2rem;
+}
+.player a:hover i {
+    color: #ffffff;
+}
+.player a#send {
+    background-color: #368f02;
+    border-radius: 0.9rem;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0 28px 0 16px;
+}
+.player a#send:hover {
+    background-color: var(--speaking-dark);
+}
+.player a#send i {
+    color: #ffffff;
+}
+.player a#send:disabled {
+    color: var(--speaking-dark) !important;
+}
+.player a#send:disabled i {
+    color: var(--speaking-dark) !important;
+}
+#recordBtn {
+    color: #cb0c0c;
+}
+#send:hover {
+    color: white;
+}
+.send-done {
+    color: white !important;
+    background-color: #43A047 !important;
+    pointer-events: none;
+}
+.send-done i {
+    color: white!important;
+}
+.spinner-layer {
+    border-color: var(--speaking-dark) !important;
+}
+.preloader-wrapper {
+    vertical-align: middle;
+    margin-top: 7px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.responsive-img {
+    width: 100%;
+    height: auto;
+    padding: .9rem;
+}
+#bar {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    position:relative;
+    width:100%;
+}
+#timeline {
+    width: 60%;
+    height: 20px;
+    border-radius: 15px;
+    background: rgba(0,0,0,.3);
+    position: relative;
+}
+#playhead {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 0 5px var(--speaking-dark);
+    position: absolute;
+    left: 0px;
+}
+#currentTime,#totalTime {
+    font-size: 1.3rem;
+    padding: 0 2%;
+    position: relative;
+}
+#currentTime,#progress-bar,#totalTime {
+    color: var(--speaking-dark);
+}
+#resultContainer {
+    background: var(--speaking-dark);
+    border-radius: 0.9rem;
+    color: white;
+    margin: 15px 0;
+    padding: 15px;
+}
+#resultContainer .my-recording {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#resultContainer .my-recording small {
+    font-weight: 400;
+    text-transform: inherit;
+}
+#recordingList {
+    margin: 10px 0 0 0;
+}
+#recordingList li {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+#record-indicator {
+    background-color: #cb0c0c !important;
+    z-index: 3!important;
+    transition: all 0.5s ease;
+}
+/*
+.scrolled {
+    height: 50px;
+}
+.scrolled .rol .card {
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+}
+.scrolled .rol .card img {
+    display: none;
+}
+*/
+audio {
+    height: 40px;
+    width: 300px;
+}

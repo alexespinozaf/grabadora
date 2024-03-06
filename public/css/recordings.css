@@ -1,0 +1,29 @@
+ol {
+    counter-reset: section;
+    align-items: center;
+    justify-content: center;
+}
+li {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+    margin-left:auto;
+}
+.recordings:before {
+    counter-increment: section;
+    content: counter(section) ".";
+    position: absolute;
+    margin-left: -20px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
